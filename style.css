@@ -1,0 +1,227 @@
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* =========================
+   COLOR PALETTE (LIGHT)
+========================= */
+:root {
+  --bg: #f5f8f6;                 /* soft sage-tinted light */
+  --panel: #e7f3ec;              /* light green panel */
+  --ink: #1f2937;                /* primary text */
+  --muted: #4b5563;              /* secondary text */
+  --border: rgba(31, 41, 55, 0.12);
+  --accent: #8fe3b6;             /* mint accent */
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  background:
+    radial-gradient(
+      1200px 600px at 50% 0%,
+      rgba(143, 227, 182, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      #f7faf8 0%,
+      #eef3f0 100%
+    );
+  color: var(--ink);
+}
+
+/* =========================
+   LEFT ACCENT RAIL
+========================= */
+.accent-rail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 100vh;
+  background: var(--accent);
+}
+
+/* =========================
+   NAV
+========================= */
+.nav {
+  padding: 28px 28px 16px;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+.right{
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+}
+}
+
+/* Logo */
+.logo-mark {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-weight: 800;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+/* Nav links */
+.links {
+  display: flex;
+  gap: 14px;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 650;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.links a:hover {
+  background: rgba(143, 227, 182, 0.25);
+}
+
+.links a.active {
+  background: rgba(143, 227, 182, 0.45);
+  border-color: rgba(143, 227, 182, 0.6);
+}
+
+/* Buttons */
+.btn {
+  background: var(--accent);
+  color: #0b1220;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.ghost {
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 650;
+  background: #ffffff;
+}
+
+.ghost:hover {
+  background: rgba(143, 227, 182, 0.2);
+}
+
+/* Subline */
+.subline {
+  max-width: 1100px;
+  margin: 12px auto 0;
+  padding-left: 58px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  padding: 40px 28px 80px;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--panel);
+  border-radius: 28px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 52px;
+  align-items: center;
+  box-shadow:
+    0 30px 80px rgba(31, 41, 55, 0.12);
+}
+
+/* Photo */
+.photo-card {
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Image */
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero text */
+.hero-text h1 {
+  font-size: 44px;
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+/* CTA row */
+.cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .subline {
+    padding-left: 0;
+  }
+}
